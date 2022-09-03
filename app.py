@@ -10,7 +10,7 @@ name_list = []
 def hello():
     name = request.args.get('name')
     
-    if name != "":
+    if name != None:
         name_list.append(name)    
 
     name_str = "\n".join(name_list)
