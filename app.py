@@ -4,11 +4,16 @@ import os
 
 app = Flask(__name__)
 
+name_list = []
+
 @app.route('/')
 def hello():
     name = request.args.get('name')
     
-    return "Hello " + name + "!"
+    if name != "":
+        name_list.append(name)    
+
+    return "Hello " + name_list + "!"
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
