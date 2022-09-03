@@ -13,7 +13,8 @@ def hello():
     if name != "":
         name_list.append(name)    
 
-    return "Hello " + name_list + "!"
+    name_str = "".split(name_list, "\n")
+    return "Hello users\n" + name_str
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
