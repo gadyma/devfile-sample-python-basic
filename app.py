@@ -5,7 +5,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Hellfire Sun LTD"
+    resp = flask.Response("Hellfire Sun LTD")
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
