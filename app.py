@@ -13,7 +13,7 @@ def hello():
     if name != "":
         name_list.append(name)    
 
-    name_str = "".split(name_list, "\n")
+    name_str = "\n".join(name_list)
     return "Hello users\n" + name_str
 
 if __name__ == '__main__':
